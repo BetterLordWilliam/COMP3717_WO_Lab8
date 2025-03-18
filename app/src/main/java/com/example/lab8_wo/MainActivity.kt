@@ -22,6 +22,7 @@ import com.example.lab8_wo.ui.theme.Lab8_WOTheme
  * A01372608
  */
 
+// Main activity, just responsible for initializing the MainContent composable
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,21 +32,5 @@ class MainActivity : ComponentActivity() {
                 MainContent()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Lab8_WOTheme {
-        Greeting("Android")
     }
 }
