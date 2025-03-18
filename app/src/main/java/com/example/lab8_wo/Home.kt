@@ -36,7 +36,7 @@ import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 @Composable
 fun Home(
     colorList: List<Color>,
-    setColor: (color: Color) -> Unit,
+    setColor: (color: Int) -> Unit,
     navController: NavController? = null
 ) {
     /**
@@ -52,7 +52,7 @@ fun Home(
             ),
             // Use callback to set color state object
             onClick = {
-                setColor(color)
+                setColor(color.toArgb())
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -60,7 +60,7 @@ fun Home(
                 .padding(10.dp)
         ) {
             IconButton(
-                // Navigate useing the nav controller object
+                // Navigate using the nav controller object
                 onClick = {
                     navController?.navigate("info/${color.toArgb()}")
                 },

@@ -49,13 +49,13 @@ fun MainContent() {
         ) {
             // Home composable defined w/ route
             composable("home") {
-                Home(colorList, { color: Color ->
-                    selectedColor = color
+                Home(colorList, { color: Int ->
+                    selectedColor = Color(color)
                 }, navController)
             }
             // Info composable defined w/ route and params
             composable("info/{colorArgb}") {
-                val colorArgb = it.arguments?.getString("colorArgb")?.toInt()
+                val colorArgb = it.arguments?.getString("colorArgb")?.toLong()
                 Info(navController, colorArgb)
             }
         }

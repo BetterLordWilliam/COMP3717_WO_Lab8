@@ -9,10 +9,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import androidx.core.graphics.toColorInt
 import androidx.navigation.NavController
 
 @Composable
-fun Info(navController: NavController? = null, colorArgb: Int? = null) {
+fun Info(navController: NavController? = null, colorArgb: Long? = null) {
     // bad navigation
     if (colorArgb == null) {
         Text("Whoops, something went wrong!")
@@ -26,7 +27,7 @@ fun Info(navController: NavController? = null, colorArgb: Int? = null) {
         ) {
             // Show hex string of color in the center
             Text(
-                String.format("%02x", colorArgb),
+                String.format("%02x", colorArgb.toInt()),
                 fontSize = 25.sp,
                 modifier = Modifier
                     .align(Alignment.Center)
